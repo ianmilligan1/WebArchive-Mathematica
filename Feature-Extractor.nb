@@ -1,0 +1,299 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11881,        289]
+NotebookOptionsPosition[     11256,        263]
+NotebookOutlinePosition[     11610,        279]
+CellTagsIndexPosition[     11567,        276]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["Feature Extraction on the GeoCities Enchanted Forest Text\n", 
+  "Title"],
+ StyleBox["Ian Milligan - 23 August 2016\n\n", "Subchapter"],
+ "Adapting from the example at \
+https://www.wolfram.com/language/11/improved-machine-learning/create-a-text-\
+search-tool-using-feature-extraction.html?product=mathematica."
+}], "Text",
+ CellChangeTimes->{{3.68096220222705*^9, 3.6809622098499823`*^9}, {
+  3.6809629751739693`*^9, 3.680962981404759*^9}, {3.6809630209168577`*^9, 
+  3.680963030609304*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"bigtext", "=", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</users/ianmilligan1/dropbox/GeoCities-data/1000-enchantedforest.txt\>\
+\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.680962615318234*^9, 3.680962620556718*^9}, {
+  3.6809627792530127`*^9, 3.6809627963396883`*^9}, {3.680963367456077*^9, 
+  3.6809633972465057`*^9}, {3.6809634440631104`*^9, 3.680963444261527*^9}, {
+  3.680964582508162*^9, 3.680964582620076*^9}, {3.680964822151136*^9, 
+  3.680964822376815*^9}, {3.680970102940419*^9, 3.680970103095138*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sentences", "=", 
+   RowBox[{"TextSentences", "[", "bigtext", "]"}]}], ";", " ", 
+  RowBox[{"(*", 
+   RowBox[{"*", " ", "segments", " ", "into", " ", "sentences"}], " ", 
+   "**)"}]}]], "Input",
+ CellChangeTimes->{{3.680962759536627*^9, 3.6809627651107483`*^9}, {
+  3.680962845447488*^9, 3.680962848182582*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"features", "=", 
+    RowBox[{"FeatureExtraction", "[", "sentences", "]"}]}], ";"}], 
+  " "}]], "Input",
+ CellChangeTimes->{{3.680962870131734*^9, 3.6809628816576157`*^9}, {
+   3.680962930532586*^9, 3.680962938196659*^9}, 3.680970370537077*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nf", "=", 
+  RowBox[{"Nearest", "[", 
+   RowBox[{
+    RowBox[{"features", "[", "sentences", "]"}], "\[Rule]", "Automatic"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6809703033408337`*^9, 3.680970322776496*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TemplateBox[{RowBox[{
+      StyleBox[
+       TagBox["NearestFunction", "SummaryHead"], "NonInterpretableSummary"], 
+      StyleBox["[", "NonInterpretableSummary"], 
+      DynamicModuleBox[{Typeset`open$$ = False}, 
+       PanelBox[
+        PaneSelectorBox[{False -> GridBox[{{
+              PaneBox[
+               ButtonBox[
+                DynamicBox[
+                 FEPrivate`FrontEndResource[
+                 "FEBitmaps", "SquarePlusIconMedium"]], 
+                ButtonFunction :> (Typeset`open$$ = True), Appearance -> None,
+                 Evaluator -> Automatic, Method -> "Preemptive"], 
+               Alignment -> {Center, Center}, ImageSize -> 
+               Dynamic[{
+                 Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                  AbsoluteCurrentValue[Magnification]}]], 
+              GraphicsBox[{{{
+                  Directive[
+                   PointSize[0.125], 
+                   RGBColor[1, 0, 0]], 
+                  PointBox[{0.5, 0.5}]}, {
+                  Directive[
+                   PointSize[0.125], 
+                   GrayLevel[0.5]], 
+                  
+                  PointBox[{{0.1795528351379172, 0.0994714438781299}, {
+                   0.7056740672325248, 0.6072610584092579}, {
+                   0.8751907147676556, 0.43365086554091525`}, {
+                   0.5311259379568558, 0.7402341039205544}, {
+                   0.024850489769640216`, 0.2680094271842395}, {
+                   0.8535001476389303, 0.09037709159382268}, {
+                   0.18825996468471073`, 0.11580607373374763`}, {
+                   0.37580999850411323`, 0.7473443767647248}, {
+                   0.7179416455907517, 0.31385476481358254`}, {
+                   0.6087567739228883, 0.045415361402344034`}}]}}, {
+                 Directive[
+                  PointSize[0.125], 
+                  GrayLevel[0]], 
+                 PointBox[{0.7056740672325248, 0.6072610584092579}], 
+                 AbsoluteDashing[{1, 2}], 
+                 
+                 CircleBox[{0.7056740672325248, 0.6072610584092579}, 
+                  0.23196283448656893`]}}, {
+               Background -> GrayLevel[0.93], Axes -> False, AspectRatio -> 1,
+                 ImageSize -> {Automatic, 
+                  Dynamic[
+                  3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])]}, Frame -> True, FrameTicks -> None, 
+                FrameStyle -> Directive[
+                  Thickness[Tiny], 
+                  GrayLevel[0.7]], PlotRangePadding -> 0.1}], 
+              GridBox[{{
+                 RowBox[{
+                   TagBox["\"Data points: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["12740", "SummaryItem"]}]}, {
+                 RowBox[{
+                   TagBox["\"Input dimension: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["545", "SummaryItem"]}]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {
+                "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> {
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+            GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+            GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+            BaselinePosition -> {1, 1}], True -> GridBox[{{
+              PaneBox[
+               ButtonBox[
+                DynamicBox[
+                 FEPrivate`FrontEndResource[
+                 "FEBitmaps", "SquareMinusIconMedium"]], 
+                ButtonFunction :> (Typeset`open$$ = False), Appearance -> 
+                None, Evaluator -> Automatic, Method -> "Preemptive"], 
+               Alignment -> {Center, Center}, ImageSize -> 
+               Dynamic[{
+                 Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                  AbsoluteCurrentValue[Magnification]}]], 
+              GraphicsBox[{{{
+                  Directive[
+                   PointSize[0.125], 
+                   RGBColor[1, 0, 0]], 
+                  PointBox[{0.5, 0.5}]}, {
+                  Directive[
+                   PointSize[0.125], 
+                   GrayLevel[0.5]], 
+                  PointBox[{{0.1795528351379172, 0.0994714438781299}, {
+                   0.7056740672325248, 0.6072610584092579}, {
+                   0.8751907147676556, 0.43365086554091525`}, {
+                   0.5311259379568558, 0.7402341039205544}, {
+                   0.024850489769640216`, 0.2680094271842395}, {
+                   0.8535001476389303, 0.09037709159382268}, {
+                   0.18825996468471073`, 0.11580607373374763`}, {
+                   0.37580999850411323`, 0.7473443767647248}, {
+                   0.7179416455907517, 0.31385476481358254`}, {
+                   0.6087567739228883, 0.045415361402344034`}}]}}, {
+                 Directive[
+                  PointSize[0.125], 
+                  GrayLevel[0]], 
+                 PointBox[{0.7056740672325248, 0.6072610584092579}], 
+                 AbsoluteDashing[{1, 2}], 
+                 
+                 CircleBox[{0.7056740672325248, 0.6072610584092579}, 
+                  0.23196283448656893`]}}, {
+               Background -> GrayLevel[0.93], Axes -> False, AspectRatio -> 1,
+                 ImageSize -> {Automatic, 
+                  Dynamic[
+                  3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])]}, Frame -> True, FrameTicks -> None, 
+                FrameStyle -> Directive[
+                  Thickness[Tiny], 
+                  GrayLevel[0.7]], PlotRangePadding -> 0.1}], 
+              GridBox[{{
+                 RowBox[{
+                   TagBox["\"Data points: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["12740", "SummaryItem"]}]}, {
+                 RowBox[{
+                   TagBox["\"Input dimension: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["545", "SummaryItem"]}]}, {
+                 RowBox[{
+                   TagBox["\"Output: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["\"scalar\"", "SummaryItem"]}]}, {
+                 RowBox[{
+                   TagBox["\"Distance function: \"", "SummaryItemAnnotation"],
+                    "\[InvisibleSpace]", 
+                   TagBox["Automatic", "SummaryItem"]}]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {
+                "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> {
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+            GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+            GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+            BaselinePosition -> {1, 1}]}, 
+         Dynamic[Typeset`open$$], ImageSize -> Automatic], BaselinePosition -> 
+        Baseline], DynamicModuleValues :> {}], 
+      StyleBox["]", "NonInterpretableSummary"]}]},
+   "CopyTag",
+   DisplayFunction->(#& ),
+   InterpretationFunction->("NearestFunction[{545, <>}]"& )],
+  False,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.680970325027899*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"neargeocities", "=", 
+   RowBox[{
+    RowBox[{"sentences", "[", 
+     RowBox[{"[", 
+      RowBox[{"First", "@", 
+       RowBox[{"nf", "[", 
+        RowBox[{"features", "[", "#", "]"}], "]"}]}], "]"}], "]"}], "&"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6809703289261713`*^9, 3.680970340457939*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"neargeocities", "[", "\"\<guest\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.680970345013939*^9, 3.680970357583961*^9}, {
+  3.680970648727605*^9, 3.680970680221754*^9}}],
+
+Cell[BoxData["\<\"Visit our old guest book here.\"\>"], "Output",
+ CellChangeTimes->{{3.680970350505167*^9, 3.680970376809802*^9}, {
+  3.6809706473562183`*^9, 3.6809706807678223`*^9}}]
+}, Open  ]]
+},
+WindowSize->{841, 730},
+WindowMargins->{{20, Automatic}, {Automatic, 44}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 519, 10, 232, "Text"],
+Cell[1080, 32, 554, 11, 32, "Input"],
+Cell[1637, 45, 346, 8, 32, "Input"],
+Cell[1986, 55, 290, 7, 32, "Input"],
+Cell[CellGroupData[{
+Cell[2301, 66, 239, 6, 32, "Input"],
+Cell[2543, 74, 7938, 162, 88, "Output"]
+}, Open  ]],
+Cell[10496, 239, 339, 10, 32, "Input"],
+Cell[CellGroupData[{
+Cell[10860, 253, 193, 3, 32, "Input"],
+Cell[11056, 258, 184, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

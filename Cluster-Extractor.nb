@@ -1,0 +1,1454 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     82029,       1446]
+NotebookOptionsPosition[     81474,       1422]
+NotebookOutlinePosition[     81828,       1438]
+CellTagsIndexPosition[     81785,       1435]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["Finding Clusters in Text\n", "Title"],
+ StyleBox["Ian Milligan - 23 August 2016", "Subchapter"]
+}], "Text",
+ CellChangeTimes->{{3.680971080557249*^9, 3.680971103043315*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"enchantedfiles", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\</users/ianmilligan1/dropbox/GeoCities-data/1000-enchantedforest.txt\>\
+\"", ",", "\"\<Lines\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.680962615318234*^9, 3.680962620556718*^9}, {
+  3.6809627792530127`*^9, 3.6809627963396883`*^9}, {3.680963367456077*^9, 
+  3.6809633972465057`*^9}, {3.6809634440631104`*^9, 3.680963444261527*^9}, {
+  3.680964582508162*^9, 3.680964582620076*^9}, {3.680964822151136*^9, 
+  3.680964822376815*^9}, {3.680970102940419*^9, 3.680970103095138*^9}, {
+  3.680971022361898*^9, 3.680971026480084*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"res", "=", 
+   RowBox[{"FindClusters", "[", 
+    RowBox[{"enchantedfiles", ",", "10"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.68097096514062*^9, 3.680971016568289*^9}, {
+  3.680971058120308*^9, 3.680971058669921*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BarChart", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Length", "[", 
+      RowBox[{"res", "\[LeftDoubleBracket]", "#", "\[RightDoubleBracket]"}], 
+      "]"}], "&"}], "/@", 
+    RowBox[{"Range", "[", "10", "]"}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", "\"\<Number of documents\>\""}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", 
+    "\"\<Distribution of documents in ten clusters\>\""}], ",", 
+   RowBox[{"ChartLabels", "\[Rule]", 
+    RowBox[{"Range", "[", "10", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6810352182142143`*^9, 3.681035253067088*^9}, {
+  3.681035307753024*^9, 3.681035397715644*^9}, {3.6810356205774183`*^9, 
+  3.681035620879421*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Opacity[0], PointBox[{0.3429357798165137, 0.}]}, {{}, 
+    {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+     Thickness[Small]}], 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{0.5412844036697247, 0.}, {1.4587155963302751`, 62.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{55.56879810747828, 82.9827579015499}, {
+           70.76878774461602, 102.22250252371747`}}],
+         StatusArea[#, 62]& ,
+         TagBoxNote->"62"],
+        StyleBox["62", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[62, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{1.5412844036697246`, 0.}, {2.458715596330275, 118.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{84.90501428301636, 112.31897407708797`}, {
+           42.81059375058889, 102.22250252371747`}}],
+         StatusArea[#, 118]& ,
+         TagBoxNote->"118"],
+        StyleBox["118", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[118, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{2.541284403669725, 0.}, {3.4587155963302756`, 187.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{114.24123045855443`, 141.65519025262606`}, {
+           8.36210472223405, 102.22250252371747`}}],
+         StatusArea[#, 187]& ,
+         TagBoxNote->"187"],
+        StyleBox["187", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[187, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{3.5412844036697253`, 0.}, {4.458715596330276, 363.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{143.5774466340925, 
+           170.99140642816414`}, {-79.50650497327975, 102.22250252371747`}}],
+         StatusArea[#, 363]& ,
+         TagBoxNote->"363"],
+        StyleBox["363", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[363, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{4.541284403669725, 0.}, {5.458715596330276, 64.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{172.91366280963058`, 200.3276226037022}, {
+           69.7702808162579, 102.22250252371747`}}],
+         StatusArea[#, 64]& ,
+         TagBoxNote->"64"],
+        StyleBox["64", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[64, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{5.541284403669725, 0.}, {6.458715596330276, 22.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{202.24987898516864`, 229.66383877924028`}, {
+           90.73892631177824, 102.22250252371747`}}],
+         StatusArea[#, 22]& ,
+         TagBoxNote->"22"],
+        StyleBox["22", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[22, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{6.541284403669725, 0.}, {7.458715596330276, 91.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{231.58609516070672`, 259.0000549547783}, {
+           56.2904372834234, 102.22250252371747`}}],
+         StatusArea[#, 91]& ,
+         TagBoxNote->"91"],
+        StyleBox["91", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[91, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{7.541284403669725, 0.}, {8.458715596330276, 91.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{260.9223113362448, 288.3362711303164}, {
+           56.2904372834234, 102.22250252371747`}}],
+         StatusArea[#, 91]& ,
+         TagBoxNote->"91"],
+        StyleBox["91", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[91, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{8.541284403669724, 0.}, {9.458715596330276, 1.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{290.25852751178286`, 317.6724873058545}, {
+           101.2232490595384, 102.22250252371747`}}],
+         StatusArea[#, 1]& ,
+         TagBoxNote->"1"],
+        StyleBox["1", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[1, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.63], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{9.541284403669724, 0.}, {10.458715596330276`, 1.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{319.5947436873209, 347.00870348139256`}, {
+           101.2232490595384, 102.22250252371747`}}],
+         StatusArea[#, 1]& ,
+         TagBoxNote->"1"],
+        StyleBox["1", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[1, {}], "Tooltip"]& ]}}, {}, {}}, {}, {}, 
+   StyleBox[
+    StyleBox[{
+      {Thickness[Tiny], 
+       LineBox[{{0.3429357798165137, 0.}, {10.66103119266055, 0.}}], 
+       StyleBox[{}, "GraphicsLabel",
+        StripOnInput->False]}, 
+      StyleBox[{
+        {Thickness[Tiny], 
+         LineBox[{{0.5412844036697247, 0.}, 
+           Offset[{-1.102182119232618*^-15, -6.}, {0.5412844036697247, 0.}]}],
+          LineBox[{{10.458715596330276`, 0.}, 
+           Offset[{-1.102182119232618*^-15, -6.}, {10.458715596330276`, 
+            0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {
+           LineBox[{{1.4587155963302751`, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {1.4587155963302751`, 
+              0.}]}], LineBox[{{1.5412844036697249`, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {1.5412844036697249`, 
+              0.}]}], LineBox[{{2.458715596330275, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {2.458715596330275, 
+              0.}]}], LineBox[{{2.541284403669725, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {2.541284403669725, 
+              0.}]}], LineBox[{{3.4587155963302756`, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {3.4587155963302756`, 
+              0.}]}], LineBox[{{3.5412844036697253`, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {3.5412844036697253`, 
+              0.}]}], LineBox[{{4.458715596330276, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {4.458715596330276, 
+              0.}]}], LineBox[{{4.541284403669724, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {4.541284403669724, 
+              0.}]}], LineBox[{{5.458715596330275, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {5.458715596330275, 
+              0.}]}], LineBox[{{5.541284403669724, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {5.541284403669724, 
+              0.}]}], LineBox[{{6.458715596330275, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {6.458715596330275, 
+              0.}]}], LineBox[{{6.541284403669724, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {6.541284403669724, 
+              0.}]}], LineBox[{{7.458715596330275, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {7.458715596330275, 
+              0.}]}], LineBox[{{7.541284403669724, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {7.541284403669724, 
+              0.}]}], LineBox[{{8.458715596330276, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {8.458715596330276, 
+              0.}]}], LineBox[{{8.541284403669724, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {8.541284403669724, 
+              0.}]}], LineBox[{{9.458715596330276, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {9.458715596330276, 
+              0.}]}], LineBox[{{9.541284403669724, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {9.541284403669724, 
+              0.}]}]}, {}}}, 
+        StyleBox[
+         {Thickness[Tiny], 
+          InsetBox["1", Offset[{0., -2.}, {1., 0.}], 
+           ImageScaled[{Rational[1, 2], 1}], Automatic, {1, 0}], 
+          InsetBox["2", Offset[{0., -2.}, {2., 0.}], 
+           ImageScaled[{Rational[1, 2], 1}], Automatic, {1, 0}], 
+          InsetBox["3", Offset[{0., -2.}, {3.0000000000000004, 0.}], 
+           ImageScaled[{Rational[1, 2], 1}], Automatic, {1, 0}], 
+          InsetBox["4", Offset[{0., -2.}, {4., 0.}], 
+           ImageScaled[{Rational[1, 2], 1}], Automatic, {1, 0}], 
+          InsetBox["5", Offset[{0., -2.}, {5., 0.}], 
+           ImageScaled[{Rational[1, 2], 1}], Automatic, {1, 0}], 
+          InsetBox["6", Offset[{0., -2.}, {6., 0.}], 
+           ImageScaled[{Rational[1, 2], 1}], Automatic, {1, 0}], 
+          InsetBox["7", Offset[{0., -2.}, {7., 0.}], 
+           ImageScaled[{Rational[1, 2], 1}], Automatic, {1, 0}], 
+          InsetBox["8", Offset[{0., -2.}, {8., 0.}], 
+           ImageScaled[{Rational[1, 2], 1}], Automatic, {1, 0}], 
+          InsetBox["9", Offset[{0., -2.}, {9., 0.}], 
+           ImageScaled[{Rational[1, 2], 1}], Automatic, {1, 0}], 
+          InsetBox["10", Offset[{0., -2.}, {10., 0.}], 
+           ImageScaled[{Rational[1, 2], 1}], Automatic, {1, 0}]}, 
+         "GraphicsLabel",
+         StripOnInput->False]}, "GraphicsTicks",
+       StripOnInput->False]},
+     Antialiasing->False], "GraphicsAxes",
+    StripOnInput->False]},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, True},
+  AxesLabel->{None, 
+    FormBox["\"Number of documents\"", TraditionalForm]},
+  AxesOrigin->{0.3429357798165137, 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Identity[
+       Part[#, 1]], 
+      Identity[
+       Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+      Identity[
+       Part[#, 1]], 
+      Identity[
+       Part[#, 2]]}& )},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {{{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {1., 
+       FormBox["1", TraditionalForm], 0}, {2., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {2., 
+       FormBox["2", TraditionalForm], 0}, {3., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {3., 
+       FormBox["3", TraditionalForm], 0}, {4., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {4., 
+       FormBox["4", TraditionalForm], 0}, {5., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {5., 
+       FormBox["5", TraditionalForm], 0}, {6., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {6., 
+       FormBox["6", TraditionalForm], 0}, {7., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {7., 
+       FormBox["7", TraditionalForm], 0}, {8., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {8., 
+       FormBox["8", TraditionalForm], 0}, {9., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {9., 
+       FormBox["9", TraditionalForm], 0}, {10., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {10., 
+       FormBox["10", TraditionalForm], 0}}, {{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {2., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {3., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {4., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {5., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {6., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {7., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {8., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {9., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}, {10., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.004, 0}}}}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  PlotLabel->FormBox[
+   "\"Distribution of documents in ten clusters\"", TraditionalForm],
+  PlotRange->{{All, All}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{None, Automatic}]], "Output",
+ CellChangeTimes->{{3.6810352227480507`*^9, 3.6810352535685587`*^9}, {
+   3.681035312452796*^9, 3.68103536669512*^9}, 3.6810353983917303`*^9, 
+   3.681035621330371*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"res", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.681035517942741*^9, 3.681035524060794*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/1002/,\
+HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:31 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w4.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/gladys2.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/gladys2.geo Last-Modified: Fri, 03 Dec 2004 06:46:27 \
+GMT Accept-Ranges: bytes Content-Length: 14942 Cache-Control: private \
+Connection: close Content-Type: text/html Histoires \[CapitalATilde]\
+\[NonBreakingSpace] raconter ou lire)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/1833/\
+MAGEPAGE.HTM,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:33 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w3.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/ljkaiser_1823/MAGEPAGE.HTM X-INKT-SITE: \
+http://us.geocities.com/ljkaiser_1823 Last-Modified: Thu, 18 Apr 2002 \
+02:21:51 GMT Accept-Ranges: bytes Content-Length: 1657 Cache-Control: private \
+Connection: close Content-Type: text/html MAGEPAGE \[CapitalAHat]\
+\[NonBreakingSpace] Thanks for joining us here at Michigan Alliance for \
+Gifted Education. Our web site name has changed. \[CapitalAHat]\
+\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace])\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/2125/,\
+HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:38 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w4.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/smcards.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/smcards.geo Last-Modified: Wed, 19 Aug 1998 21:16:00 \
+GMT Accept-Ranges: bytes Content-Length: 1795 Cache-Control: private \
+Connection: close Content-Type: text/html You are Seiya/Starfighter fan # to \
+enter the shrine since June 1st, 1998 at 10:00pm PST.)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/2175/,\
+HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:38 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w6.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/ickapus/index.html \
+X-INKT-SITE: http://us.geocities.com/ickapus Last-Modified: Tue, 17 Feb 2004 \
+05:22:53 GMT Accept-Ranges: bytes Content-Length: 5126 Cache-Control: private \
+Connection: close Content-Type: text/html Some other interesting sites:)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/2292/,\
+HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:41 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w7.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/hiscastle/index.html \
+X-INKT-SITE: http://us.geocities.com/hiscastle Last-Modified: Thu, 08 Jul \
+1999 22:37:33 GMT Accept-Ranges: bytes Content-Length: 6263 Cache-Control: \
+private Connection: close Content-Type: text/html Historia's Castle Handouts \
+for)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/4364/\
+pd.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:43 GMT P3P: policyref=\\\
+\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR ADM DEV TAI \
+PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY ONL UNI \
+PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w7.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/twilightmlp/pd.html \
+X-INKT-SITE: http://us.geocities.com/twilightmlp Last-Modified: Sun, 01 Dec \
+2002 01:53:38 GMT Accept-Ranges: bytes Content-Length: 2372 Cache-Control: \
+private Connection: close Content-Type: text/html Instructions Choose a pony \
+Draw a symbol and color her and her clothes Cut her and her clothes out Take \
+her out on an adventure!)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/8989/,\
+HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:22 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w4.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/nestoncivic/index.html X-INKT-SITE: \
+http://us.geocities.com/nestoncivic Last-Modified: Tue, 14 Nov 2000 00:32:08 \
+GMT Accept-Ranges: bytes Content-Length: 6253 Cache-Control: private \
+Connection: close Content-Type: text/html Neston is an important historic \
+town which has been occupied since Saxon times.\[CapitalAHat]\
+\[NonBreakingSpace] A town of warm sandstone and mellow brick, with many fine \
+historic buildings.\[CapitalAHat]\[NonBreakingSpace] It is a beautiful place \
+to live, work and visit. NESTON CIVIC SOCIETY Is registered with The Civic \
+Trust and the Charities Commission No: 515628)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Cottage/2496/,\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\
+ \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Creek/\
+1006/lego.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:51 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w8.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/dnjhess/lego.html \
+X-INKT-SITE: http://us.geocities.com/dnjhess Last-Modified: Thu, 10 Apr 2008 \
+00:33:51 GMT Accept-Ranges: bytes Content-Length: 2228 Cache-Control: private \
+Connection: close Content-Type: text/html My photos have moved to Flickr .)\"\
+\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Dell/\
+8343/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:34 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w1.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/cargass.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/cargass.geo Last-Modified: Fri, 16 Jan 1998 23:39:51 \
+GMT Accept-Ranges: bytes Content-Length: 2120 Cache-Control: private \
+Connection: close Content-Type: text/html cargass 's Home Page This page \
+hosted by)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/2755/\
+kantoj.html,HTTP/1.1 503 Service Temporarily Unavailable Date: Thu, 23 Jul \
+2009 05:45:42 GMT Cache-Control: private Connection: close Content-Type: \
+text/html; charset=iso-8859-1 Sorry, Service Temporarily Unavailable. The \
+server is temporarily unable to service your request due to maintenance \
+downtime or capacity problems. Please try again later. Additionally, a 503 \
+Service Temporarily Unavailable error was encountered while trying to use an \
+ErrorDocument to handle the request. Please check the URL for proper spelling \
+and capitalization. If you're having trouble locating a destination on \
+Yahoo!, try visiting the Yahoo! home page or look through a list of Yahoo!'s \
+online services . Also, you may find what you're looking for if you try \
+searching below. Search the Web Please try Yahoo! Help Central if you need \
+more assistance.)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/1130/\
+pandb.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:32 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w7.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/snowfire_.geo/pandb.html X-INKT-SITE: \
+http://us.geocities.com/snowfire_.geo Expires: Wed, 22 Jul 2009 05:45:32 GMT \
+Pragma: no-cache Last-Modified: Thu, 23 Jul 2009 05:45:32 GMT Cache-Control: \
+private Connection: close Content-Type: text/html Pinky and the Brain \
+\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/3407/,\
+HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:42 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w5.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/17thhw.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/17thhw.geo Last-Modified: Mon, 08 Jun 1998 23:21:57 \
+GMT Accept-Ranges: bytes Content-Length: 3658 Cache-Control: private \
+Connection: close Content-Type: text/html 17th HUMBER WEST SCOUT GROUP Our \
+Provence Learn more about the Province we live in. Secsions Learn more about \
+each Section. Leader Who are the Leaders in each Section? Cub's Survey PLease \
+take a moment to fill out our Cubs Survey. You are Visitor Number)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/6157/,\
+HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:59 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w7.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/laspina.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/laspina.geo Last-Modified: Mon, 04 Mar 2002 12:45:04 \
+GMT Accept-Ranges: bytes Content-Length: 1957 Cache-Control: private \
+Connection: close Content-Type: text/html La pagina di Marcello La Spina Le \
+religioni sono come le lucciole, hanno bisogno dell'oscurit\[IDoubleDot]\
+\[DownQuestion]\.bd per brillare (Schopenauer) Scacchi This page hosted by)\"\
+\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/8036/\
+allaboutus.html,HTTP/1.1 503 Service Temporarily Unavailable Date: Thu, 23 \
+Jul 2009 05:46:19 GMT Cache-Control: private Connection: close Content-Type: \
+text/html; charset=iso-8859-1 Sorry, Service Temporarily Unavailable. The \
+server is temporarily unable to service your request due to maintenance \
+downtime or capacity problems. Please try again later. Additionally, a 503 \
+Service Temporarily Unavailable error was encountered while trying to use an \
+ErrorDocument to handle the request. Please check the URL for proper spelling \
+and capitalization. If you're having trouble locating a destination on \
+Yahoo!, try visiting the Yahoo! home page or look through a list of Yahoo!'s \
+online services . Also, you may find what you're looking for if you try \
+searching below. Search the Web Please try Yahoo! Help Central if you need \
+more assistance.)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Cottage/1615/raggedy.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:34 GMT \
+P3P: policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR \
+CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi \
+IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" \
+X-Host: w1.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/grammy_girl/raggedy.html X-INKT-SITE: \
+http://us.geocities.com/grammy_girl Expires: Wed, 22 Jul 2009 05:46:34 GMT \
+Pragma: no-cache Last-Modified: Thu, 23 Jul 2009 05:46:34 GMT Cache-Control: \
+private Connection: close Content-Type: text/html these banners do not \
+reflect my personal preferences or endorsements WELCOME TO RAGGEDY ANN'S \
+GRAPHICS Adapted from original artwork of Johnny Gruelle, ca. 1920)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Creek/\
+6934/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:56 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w1.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/adam_12.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/adam_12.geo Last-Modified: Thu, 20 Jan 2000 20:49:48 \
+GMT Accept-Ranges: bytes Content-Length: 12760 Cache-Control: private \
+Connection: close Content-Type: text/html Updated 1/20/00 Starcraft Hero's \
+United Earth Directorates Military Warning:)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Glade/\
+5657/hallo1.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:57 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w5.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/woody93.geo/hallo1.html X-INKT-SITE: \
+http://us.geocities.com/woody93.geo Last-Modified: Fri, 21 Sep 2001 20:39:57 \
+GMT Accept-Ranges: bytes Content-Length: 2561 Cache-Control: private \
+Connection: close Content-Type: text/html If this page does not auto redirect \
+to the main page please click HERE . Thank you. You are brave soul number to \
+make it this far!)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Meadow/1024/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:48:05 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w5.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/cratercreatures/index.html X-INKT-SITE: \
+http://us.geocities.com/cratercreatures Last-Modified: Thu, 22 Jul 2004 \
+04:16:20 GMT Accept-Ranges: bytes Content-Length: 1653 Cache-Control: private \
+Connection: close Content-Type: text/html Welcome to)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Mountain/6559/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:48:48 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w7.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/cubpack152/index.html X-INKT-SITE: \
+http://us.geocities.com/cubpack152 Last-Modified: Thu, 28 Sep 2000 03:13:40 \
+GMT Accept-Ranges: bytes Content-Length: 5612 Cache-Control: private \
+Connection: close Content-Type: text/html Welcome to the Home of Cub Scout \
+Pack 152 \[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \
+\[CapitalAHat]\[NonBreakingSpace])\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Pond/\
+2571/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:49:19 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w5.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/emmasgalaxy/index.htm X-INKT-SITE: \
+http://us.geocities.com/emmasgalaxy Last-Modified: Fri, 22 Oct 1999 19:09:24 \
+GMT Accept-Ranges: bytes Content-Length: 1842 Cache-Control: private \
+Connection: close Content-Type: text/html Hiya! I'm Emma. I'm 10 years old. I \
+live with my mom and dad and I have two sisters. Some things that I really \
+like are  karate, sparring, fencing, trumpet, playing on the computer and \
+reading. Come and check out my site!)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Pond/\
+4130/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:49:22 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w2.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/parchis79/index.html \
+X-INKT-SITE: http://us.geocities.com/parchis79 Last-Modified: Sun, 08 Feb \
+2004 18:48:45 GMT Accept-Ranges: bytes Content-Length: 3522 Cache-Control: \
+private Connection: close Content-Type: text/html BIENVENIDO A: \
+\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \
+\[CapitalAHat]\[NonBreakingSpace])\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/2292/\
+Meso/quiz4a.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:42 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w2.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/hiscastle/Meso/quiz4a.html X-INKT-SITE: \
+http://us.geocities.com/hiscastle Last-Modified: Wed, 19 May 1999 18:03:16 \
+GMT Accept-Ranges: bytes Content-Length: 5501 Cache-Control: private \
+Connection: close Content-Type: text/html Allow time for the quiz to load. \
+Read each question carefully. Return to the Castle BookMarks for Futher \
+Consideration)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/2292/\
+index.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:42 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w7.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/hiscastle/index.html \
+X-INKT-SITE: http://us.geocities.com/hiscastle Last-Modified: Thu, 08 Jul \
+1999 22:37:33 GMT Accept-Ranges: bytes Content-Length: 6263 Cache-Control: \
+private Connection: close Content-Type: text/html Historia's Castle Handouts \
+for)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/8314/,\
+HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:19 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w5.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/gobulldogs.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/gobulldogs.geo Last-Modified: Sat, 16 Aug 2003 \
+17:23:35 GMT Accept-Ranges: bytes Content-Length: 2889 Cache-Control: private \
+Connection: close Content-Type: text/html 4991 Southside Road Hollister, CA \
+95023)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Cottage/1184/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:31 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w3.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/snow_white_grumpy/index.html X-INKT-SITE: \
+http://us.geocities.com/snow_white_grumpy Last-Modified: Tue, 19 Oct 1999 \
+19:10:49 GMT Accept-Ranges: bytes Content-Length: 4052 Cache-Control: private \
+Connection: close Content-Type: text/html Snow White's Cottage Welcome to My \
+Website!  Click on a link above to visit the areas of my website.  Have fun \
+exploring My page dedicated to Disney's Snow White and the Seven Dwarfs. This \
+page hosted by)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Creek/\
+2038/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:51 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w8.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/r1gger1/index.htm \
+X-INKT-SITE: http://us.geocities.com/r1gger1 Last-Modified: Sun, 19 Mar 2006 \
+23:58:45 GMT Accept-Ranges: bytes Content-Length: 11953 Cache-Control: \
+private Connection: close Content-Type: text/html The Bartenope Family Gulf \
+Coast Edition \[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace]Photo \[CapitalAHat]\
+\[Copyright] Photo Disc, Inc.)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Creek/\
+5476/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:56 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w6.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/troop2493/index.html \
+X-INKT-SITE: http://us.geocities.com/troop2493 Last-Modified: Tue, 16 Dec \
+2003 13:50:25 GMT Accept-Ranges: bytes Content-Length: 11262 Cache-Control: \
+private Connection: close Content-Type: text/html Junior Girl Scout Troop \
+2493 The girls are on their way to earning their Silver Award.\[CapitalAHat]\
+\[NonBreakingSpace] Check out out Whats Happening page to see what they've \
+been up to so far this year. Please take the time to sign our\[CapitalAHat]\
+\[NonBreakingSpace] guestbook , or send us an email .\[CapitalAHat]\
+\[NonBreakingSpace] we'd love to hear from you.\[CapitalAHat]\
+\[NonBreakingSpace])\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Dell/\
+1420/main.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:08 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w8.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/sub-zero321/main.html X-INKT-SITE: \
+http://us.geocities.com/sub-zero321 Expires: Wed, 22 Jul 2009 05:47:08 GMT \
+Pragma: no-cache Last-Modified: Thu, 23 Jul 2009 05:47:08 GMT Cache-Control: \
+private Connection: close Content-Type: text/html Cheat Vault 2K Welcome to \
+the Cheat Vault 2K. You are the \
+_____________________________________________________________________________ \
+Free JavaScripts provided \
+----------------------------------------------------------------------------)\
+\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Dell/\
+7012/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:17 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w8.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/tnsgmfan/index.html \
+X-INKT-SITE: http://us.geocities.com/tnsgmfan Last-Modified: Fri, 21 Nov 2003 \
+19:46:35 GMT Accept-Ranges: bytes Content-Length: 3292 Cache-Control: private \
+Connection: close Content-Type: text/html In Memoriam of\[CapitalAHat]\
+\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\
+\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace] \\\"There is a destiny \
+that makes us brothers, None goes his way alone;       All that we send into \
+the lives of others, Comes back into our       own.\\\"\[CapitalAHat]\
+\[NonBreakingSpace]-- Mary Stuart You are visitor #\[CapitalAHat]\
+\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\
+\[NonBreakingSpace])\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Dell/\
+7379/wishbone.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:25 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w5.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/sunnymack.geo/wishbone.html X-INKT-SITE: \
+http://us.geocities.com/sunnymack.geo Last-Modified: Mon, 02 Aug 1999 \
+00:09:52 GMT Accept-Ranges: bytes Content-Length: 2566 Cache-Control: private \
+Connection: close Content-Type: text/html The Squeekee Book However, all the \
+the links are still fully functional.)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Glade/\
+5207/,\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \
+Besides                  us you will see other cute babies at the Cute Babies \
+                 Club ...                  Ibu (mommy) used to pick the \
+cutest baby each month.. she'll try to do that again BUT... she can't promise \
+anything... We                  live in Jakarta Indonesia, Ibu asked us if \
+she can use our homepage for info on and of course we said it's ok...... as \
+long as... she updates our info and pictures frequently... But                \
+  she also has a complete site in Indonesian about                  moms and \
+family, please visit www.dunia-ibu.org So... sit back and relax... \
+\[CapitalAHat]\[NonBreakingSpace])\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Pond/\
+7339/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:49:31 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w5.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/longchamps_bsas/index.htm X-INKT-SITE: \
+http://us.geocities.com/longchamps_bsas Last-Modified: Tue, 19 Aug 2008 \
+00:47:15 GMT Accept-Ranges: bytes Content-Length: 25595 Cache-Control: \
+private Connection: close Content-Type: text/html Longchamps Longchamps\
+\[IDoubleDot]\[DownQuestion]\.bd Buenos Aires Argentina\[IDoubleDot]\
+\[DownQuestion]\.bd Almirante Brown , cuna de la aviaci\[IDoubleDot]\
+\[DownQuestion]\.bdn sudamericana , primer vuelo en Argentina\[IDoubleDot]\
+\[DownQuestion]\.bd y Latinoam\[IDoubleDot]\[DownQuestion]\.bdrica \
+Bienvenidos !!!)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/6176/,\
+HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:45:59 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w8.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/toyfreak.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/toyfreak.geo Expires: Wed, 22 Jul 2009 05:45:59 GMT \
+Pragma: no-cache Last-Modified: Thu, 23 Jul 2009 05:45:59 GMT Cache-Control: \
+private Connection: close Content-Type: text/html OnLine Reference for Fast \
+Food The Lists These are the lists of Fast Food Toys that I have compiled. \
+Many references have been used, and they will be mentioned when I compile my \
+book list. McDonalds Happy Meal Toys Burger King Lists)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/6741/,\
+HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:00 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w6.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/dshidler/index.html \
+X-INKT-SITE: http://us.geocities.com/dshidler Last-Modified: Sat, 07 Mar 2009 \
+02:15:40 GMT Accept-Ranges: bytes Content-Length: 1742 Cache-Control: private \
+Connection: close Content-Type: text/html An overview with biocritical \
+sources TABLE OF CONTENTS)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Cottage/3128/index.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:41 GMT \
+P3P: policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR \
+CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi \
+IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" \
+X-Host: w3.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/csmitten/index.html X-INKT-SITE: \
+http://us.geocities.com/csmitten Last-Modified: Sat, 27 Aug 2005 06:49:43 GMT \
+Accept-Ranges: bytes Content-Length: 28148 Cache-Control: private Connection: \
+close Content-Type: text/html WELCOMES YOU TO OUR HOUSE People who have \
+visited this site.)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Creek/\
+7840/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:59 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w8.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/policialocal/index.html X-INKT-SITE: \
+http://us.geocities.com/policialocal Last-Modified: Thu, 21 Jun 2001 22:19:26 \
+GMT Accept-Ranges: bytes Content-Length: 2803 Cache-Control: private \
+Connection: close Content-Type: text/html Hola, somos la \
+Polic\[CapitalATilde]\[DiscretionaryHyphen]a Local      de Zaragoza, (Espa\
+\[CapitalATilde]\[PlusMinus]a), Secci\[CapitalATilde]\.b3n      Sindical de \
+U.G.T.en el Ayuntamiento de Zaragoza Nos estamos renovando. Por motivos de \
+espacio nos hemos tenido      que trasladar, sigueme, followme)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Creek/\
+8441/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:02 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w7.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/gsclowns.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/gsclowns.geo Last-Modified: Mon, 01 Oct 2001 14:36:29 \
+GMT Accept-Ranges: bytes Content-Length: 14102 Cache-Control: private \
+Connection: close Content-Type: text/html Home Page . \[CapitalAHat]\
+\[NonBreakingSpace] The Scouting Webring is a member of \[CapitalAHat]\
+\[NonBreakingSpace])\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Dell/\
+2381/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:12 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w8.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/bebblebrox50/index.html X-INKT-SITE: \
+http://us.geocities.com/bebblebrox50 Last-Modified: Sat, 24 May 1997 20:30:24 \
+GMT Accept-Ranges: bytes Content-Length: 1085 Cache-Control: private \
+Connection: close Content-Type: text/html ANIMANIACS iNvAdE \
+sIgH-bUrR-sPaCe)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Dell/\
+4500/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:12 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w4.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/mr_sanders.geo/index.htm X-INKT-SITE: \
+http://us.geocities.com/mr_sanders.geo Last-Modified: Fri, 04 May 2007 \
+21:28:11 GMT Accept-Ranges: bytes Content-Length: 5957 Cache-Control: private \
+Connection: close Content-Type: text/html Links indicated by bees are \
+peripheral sites not hosted by Geocities.)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Dell/\
+7112/lego.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:23 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w4.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/misterso/lego.html \
+X-INKT-SITE: http://us.geocities.com/misterso Last-Modified: Thu, 01 Jul 2004 \
+21:08:58 GMT Accept-Ranges: bytes Content-Length: 2582 Cache-Control: private \
+Connection: close Content-Type: text/html CLICK HERE to go to my updated LEGO \
+page \[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \
+\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \
+\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \
+\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \
+\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \
+\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \
+\[CapitalAHat]\[NonBreakingSpace])\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Dell/\
+8881/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:46 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w6.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/dpacenido.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/dpacenido.geo Last-Modified: Thu, 09 Apr 1998 \
+06:45:18 GMT Accept-Ranges: bytes Content-Length: 4186 Cache-Control: private \
+Connection: close Content-Type: text/html \[IDoubleDot]\[DownQuestion]\.bd \
+Please E-MAIL ME tell me what you think about my home page and how I might \
+improve it. times since February 4, 1998(Philippine Time) Last revised: \
+February 8, 1998)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Fountain/7570/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:50 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w3.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/harlaxtonfanclub/index.html X-INKT-SITE: \
+http://us.geocities.com/harlaxtonfanclub Last-Modified: Thu, 22 Jul 1999 \
+02:25:02 GMT Accept-Ranges: bytes Content-Length: 1025 Cache-Control: private \
+Connection: close Content-Type: text/html Click above to enter)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Glade/\
+1756/MUD/olc/buildinfo.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:50 \
+GMT P3P: policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP \
+COR CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi \
+PUBi IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" \
+X-Host: w7.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/azurebriez/MUD/olc/buildinfo.html X-INKT-SITE: \
+http://us.geocities.com/azurebriez Expires: Wed, 22 Jul 2009 05:47:51 GMT \
+Pragma: no-cache Last-Modified: Thu, 23 Jul 2009 05:47:51 GMT Cache-Control: \
+private Connection: close Content-Type: text/html Information, Guidelines, \
+and Help For OLC Builders Please Note: Update - The links on this page should \
+all be working correctly now.  If you have problems with them, please email \
+me!)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Mountain/3149/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:48:39 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w1.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/pack579/index.html \
+X-INKT-SITE: http://us.geocities.com/pack579 Expires: Wed, 22 Jul 2009 \
+05:48:39 GMT Pragma: no-cache Last-Modified: Thu, 23 Jul 2009 05:48:39 GMT \
+Cache-Control: private Connection: close Content-Type: text/html Cub Scout \
+Pack 579 Web design and layout maintained by Michele Diehl Please send me an \
+e-mail with any questions, concerns, corrections or ideas that you would like \
+to see included in this website. This site was last updated on May 21,2000)\"\
+\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Cottage/1718/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:46:34 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w1.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/calafweb/index.html \
+X-INKT-SITE: http://us.geocities.com/calafweb Last-Modified: Mon, 26 Apr 1999 \
+23:34:07 GMT Accept-Ranges: bytes Content-Length: 2189 Cache-Control: private \
+Connection: close Content-Type: text/html \
+Resoluci\[IDoubleDot]\[DownQuestion]\.bd de i 14/02/98)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Creek/\
+3648/,\[CapitalAHat]\[NonBreakingSpace] A naughty little angel on the Web \
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace] \
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace]\[CapitalAHat]\[NonBreakingSpace]\
+\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \
+\[CapitalAHat]\[NonBreakingSpace] \[IDoubleDot]\[DownQuestion]\.bdBienvenidos \
+a mi sitio \\\"web\\\"! Welcome to my web site! \[CapitalAHat]\
+\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] Pueden continuar en \
+Espa\[IDoubleDot]\[DownQuestion]\.bdol haciendo clic en los enlaces de la \
+parte de abajo. \[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\
+\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\
+\[NonBreakingSpace] Me           encantar\[IDoubleDot]\[DownQuestion]\.bda \
+que me escribieras para darme tu opini\[IDoubleDot]\[DownQuestion]\.bdn sobre \
+mi sitio I           would love you write me and tell me your opinion about \
+my           site. <plaintext> <!-- text below generated by server. PLEASE \
+REMOVE --></object></layer></div></span></style></noscript></table></script></\
+applet><script language=\\\"JavaScript\\\" \
+src=\\\"http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js\\\"></script><script \
+language=\\\"JavaScript\\\" \
+src=\\\"http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/\
+geov2_001.js\\\"></script><script \
+language=\\\"javascript\\\">geovisit();</script><noscript><img \
+src=\\\"http://visit.geocities.yahoo.com/visit.gif?us1248328016\\\" \
+alt=\\\"setstats\\\" border=\\\"0\\\" width=\\\"1\\\" \
+height=\\\"1\\\"></noscript> <IMG \
+SRC=\\\"http://geo.yahoo.com/serv?s=76001068&t=1248328016&f=us-w8\\\" ALT=1 \
+WIDTH=1 HEIGHT=1>)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Dell/\
+3942/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:12 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w3.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/violinplr/index.html \
+X-INKT-SITE: http://us.geocities.com/violinplr Expires: Wed, 22 Jul 2009 \
+05:47:12 GMT Pragma: no-cache Last-Modified: Thu, 23 Jul 2009 05:47:12 GMT \
+Cache-Control: private Connection: close Content-Type: text/html let me know! \
+my mom helped me with this page!)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Dell/\
+9779/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:46 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w5.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/luckyred/index.htm \
+X-INKT-SITE: http://us.geocities.com/luckyred Last-Modified: Sun, 04 Feb 2007 \
+17:21:32 GMT Accept-Ranges: bytes Content-Length: 2889 Cache-Control: private \
+Connection: close Content-Type: text/html Looking For A Friend? \
+\[CapitalAHat]\[NonBreakingSpace] \[CapitalAHat]\[NonBreakingSpace])\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Mountain/5013/cristi.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:48:47 GMT \
+P3P: policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR \
+CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi \
+IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" \
+X-Host: w5.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/cristij_st/cristi.html X-INKT-SITE: \
+http://us.geocities.com/cristij_st Last-Modified: Tue, 21 Mar 2000 16:56:29 \
+GMT Accept-Ranges: bytes Content-Length: 3771 Cache-Control: private \
+Connection: close Content-Type: text/html Cauta: Senzitiv?: Afiseaza:)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Fountain/2131/tiddlywinks.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 \
+05:47:47 GMT P3P: policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", \
+CP=\\\"CAO DSP COR CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi \
+SAMi OTRi UNRi PUBi IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA \
+PRE LOC GOV\\\" X-Host: w4.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/judith_rohlf/tiddlywinks.html X-INKT-SITE: \
+http://us.geocities.com/judith_rohlf Last-Modified: Thu, 05 Oct 2000 05:40:49 \
+GMT Accept-Ranges: bytes Content-Length: 7781 Cache-Control: private \
+Connection: close Content-Type: text/html http:Tiddlywinks! any comments or \
+suggestions:)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Glade/\
+2023/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:51 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w4.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/arryssia/index.html \
+X-INKT-SITE: http://us.geocities.com/arryssia Last-Modified: Tue, 02 Oct 2001 \
+19:45:30 GMT Accept-Ranges: bytes Content-Length: 2508 Cache-Control: private \
+Connection: close Content-Type: text/html Welcome to The Enchanted Grove \
+Please come in and look around. There are few who live here, but   many who \
+enter each day.  As the seasons change so does the Enchanted Grove.  Some \
+come   to live and many to visit. Entrance Graphic came from:)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/Glade/\
+5115/index.html,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:47:54 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w3.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/smallcutie.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/smallcutie.geo Last-Modified: Fri, 19 Oct 2007 \
+07:57:45 GMT Accept-Ranges: bytes Content-Length: 4364 Cache-Control: private \
+Connection: close Content-Type: text/html Please come back soon and visit \
+me.)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Kingdom/3447/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:48:05 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w2.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/tsherb2214/index.html X-INKT-SITE: \
+http://us.geocities.com/tsherb2214 Expires: Wed, 22 Jul 2009 05:48:05 GMT \
+Pragma: no-cache Last-Modified: Thu, 23 Jul 2009 05:48:05 GMT Cache-Control: \
+private Connection: close Content-Type: text/html Curriculum Suppliers and \
+Publishers:)\"\>"},
+     {"\<\"(20090723,geocities.com,http://geocities.com/EnchantedForest/\
+Meadow/5181/,HTTP/1.1 200 OK Date: Thu, 23 Jul 2009 05:48:15 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w7.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/centralpublic/index.html X-INKT-SITE: \
+http://us.geocities.com/centralpublic Last-Modified: Mon, 18 Aug 2003 \
+14:53:22 GMT Accept-Ranges: bytes Content-Length: 1916 Cache-Control: private \
+Connection: close Content-Type: text/html Central Public School This site is \
+no longer updated. Please call the school with any inquiries. This page was \
+last updated on September 29 1999.)\"\>"},
+     {"\<\"(20090724,geocities.com,http://geocities.com/EnchantedForest/6814/,\
+\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd \[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd Welcome!! Mom's been busy again and has redone the site.\
+\[IDoubleDot]\[DownQuestion]\.bd To go to all the cool stuff she has here try \
+to catch one of the balloons.\[IDoubleDot]\[DownQuestion]\.bd Each balloon \
+takes you to a different page.\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd If you don't see the balloons, mom says she is sorry to \
+start here Catch a balloon to navigate through the site.\[IDoubleDot]\
+\[DownQuestion]\.bd\[IDoubleDot]\[DownQuestion]\.bd Two will take you to a \
+list of all that is here.\[IDoubleDot]\[DownQuestion]\.bd\[IDoubleDot]\
+\[DownQuestion]\.bd Good Luck\[IDoubleDot]\[DownQuestion]\.bd \[IDoubleDot]\
+\[DownQuestion]\.bd (don't feel like figuring it out go   to the main list \
+here ) We put the web rings on their own page for a reason.\[IDoubleDot]\
+\[DownQuestion]\.bd The graphics load slower than most pages.... Thanks to \
+KIDzFUN for giving us an Award Page designed by Shasta.)\"\>"},
+     {"\<\"(20090724,geocities.com,http://geocities.com/EnchantedForest/Glade/\
+9963/,HTTP/1.1 200 OK Date: Fri, 24 Jul 2009 10:11:02 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w2.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/abishort/index.html \
+X-INKT-SITE: http://us.geocities.com/abishort Expires: Thu, 23 Jul 2009 \
+10:11:02 GMT Pragma: no-cache Last-Modified: Fri, 24 Jul 2009 10:11:02 GMT \
+Cache-Control: private Connection: close Content-Type: text/html This site \
+hosted by)\"\>"},
+     {"\<\"(20090724,geocities.com,http://geocities.com/EnchantedForest/2738/,\
+HTTP/1.1 200 OK Date: Fri, 24 Jul 2009 10:11:00 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w5.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/facilitator.geo/index.html X-INKT-SITE: \
+http://us.geocities.com/facilitator.geo Last-Modified: Wed, 31 Dec 2008 \
+10:44:27 GMT Accept-Ranges: bytes Content-Length: 9515 Cache-Control: private \
+Connection: close Content-Type: text/html Educators: The Heart of Education \
+Gary Pieters, M.Ed. Projects, Publications and Internet Resources)\"\>"},
+     {"\<\"(20090724,geocities.com,http://geocities.com/EnchantedForest/\
+Cottage/5527/,\[CapitalAHat]\[NonBreakingSpace] 3. Ann!e Johnson (The \
+flowerchild and alien from Quadraxia), 4. Nathan Carroll (The boy with the \
+hat permanantly glued to his head), 5.Chandra Stanton (The Hyperactive \
+Jumping Bean), 6. Kit Treece (The really wild guy) 7.Calvin Yan(The \
+Rollerblade Grass Tennis Player) 8. Andrea Hill (The girl who likes the sound \
+of people eating), 9. Rebecca Hercowitz (The shower cap collector) and 10. \
+Jeff Kerzner (The math test artist) 11. Stacy Joy Heathcote (One of The \
+Weirdest Girls this side of Tipperarie) Well, that's the list. Weird, huh? If \
+you think you are strange, bizzare, weird, crazy, zany, or wacky enough to \
+join, E-mail us at: erickj@cybermail.net This page hosted by\[CapitalAHat]\
+\[NonBreakingSpace])\"\>"},
+     {"\<\"(20090724,geocities.com,http://geocities.com/EnchantedForest/Tower/\
+9989/,HTTP/1.1 200 OK Date: Fri, 24 Jul 2009 10:11:03 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w3.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/maryfoof/index.html \
+X-INKT-SITE: http://us.geocities.com/maryfoof Last-Modified: Fri, 06 Oct 2000 \
+12:55:02 GMT Accept-Ranges: bytes Content-Length: 1750 Cache-Control: private \
+Connection: close Content-Type: text/html My Questions? Comments? \
+Suggestions? Email me at This page hosted by)\"\>"},
+     {"\<\"(20090731,geocities.com,http://geocities.com/EnchantedForest/2020/\
+elmobg2.html,HTTP/1.1 200 OK Date: Fri, 31 Jul 2009 12:22:48 GMT P3P: \
+policyref=\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR \
+ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND \
+PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w2.geo.sp2.yahoo.com X-INKT-URI: \
+http://us.geocities.com/twinbabies2/elmobg2.html X-INKT-SITE: \
+http://us.geocities.com/twinbabies2 Last-Modified: Tue, 23 Dec 1997 20:19:45 \
+GMT Accept-Ranges: bytes Content-Length: 928 Cache-Control: private \
+Connection: close Content-Type: text/html This page hosted by Geocities)\"\>"},
+     {"\<\"(20090731,geocities.com,http://geocities.com/EnchantedForest/2450/\
+index.htm,HTTP/1.1 200 OK Date: Fri, 31 Jul 2009 12:23:26 GMT P3P: policyref=\
+\\\"http://info.yahoo.com/w3c/p3p.xml\\\", CP=\\\"CAO DSP COR CUR ADM DEV TAI \
+PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY ONL UNI \
+PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV\\\" X-Host: \
+w8.geo.sp2.yahoo.com X-INKT-URI: http://us.geocities.com/brucebayne/index.htm \
+X-INKT-SITE: http://us.geocities.com/brucebayne Last-Modified: Thu, 17 Jul \
+2003 21:21:08 GMT Accept-Ranges: bytes Content-Length: 2626 Cache-Control: \
+private Connection: close Content-Type: text/html <a \
+href=\\\"http://leader.linkexchange.com/X1521677/clickle\\\" \
+target=\\\"_top\\\"><img width=468 height=60 border=0 ismap alt=\\\"\\\" src=\
+\\\"http://leader.linkexchange.com/X1521677/showle?\\\"></a>)\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.681035524460453*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 905},
+WindowMargins->{{67, Automatic}, {42, Automatic}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 200, 4, 102, "Text"],
+Cell[761, 26, 643, 12, 54, "Input"],
+Cell[1407, 40, 262, 6, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1694, 50, 702, 17, 54, "Input"],
+Cell[2399, 69, 18893, 472, 255, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21329, 546, 200, 4, 32, "Input"],
+Cell[21532, 552, 59926, 867, 1168, "Output"]
+}, Open  ]]
+}
+]
+*)
+
